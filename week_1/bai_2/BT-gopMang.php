@@ -14,23 +14,25 @@
 	</form>
 	<?php  
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$file = file("Array.txt");
+		$file = fopen("Array.txt","w+");
 		$First = $_POST["mang1"];
-		$Second = $_POST["mang2"];
+		// $Second = $_POST["mang2"];
 		$sizeFirst = 8;
-		$sizeSecond = 9;
+		// $sizeSecond = 9;
 		$count1=0;
-		$count2=0;
+		// $count2=0;
 		$mang_1= array();
-		$mang_2= array();
-		$i = 0;
+		// $mang_2= array();
 		if ($count1 < $sizeFirst){
-			array_push($mang_1,([$i]=>$First));
+			$mang_1[$count1] = $First;
 			$count1++;
-			$i++;
+			$file = fwrite($file,$First);
+			
 			print_r($mang_1);
 		}
-		
 	}
+	fclose("Array.txt");
 	?>
 </body>
 </html>
