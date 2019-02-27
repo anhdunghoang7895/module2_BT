@@ -30,3 +30,7 @@ Route::post('dictionary', function (Illuminate\Http\Request $request) {
 	}
 	return view('display', compact('tiengViet'));
 });
+
+Route::get('foo', function () {
+	return 'hello world!';
+});
