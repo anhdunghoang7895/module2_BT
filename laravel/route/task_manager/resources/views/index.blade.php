@@ -23,7 +23,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-<a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a&
+<a href="profile">Xem</a> | <a href="edit">Sửa</a> | <a href="#">Xóa</a&
       </td>
   </tr>
   <tr>
@@ -32,7 +32,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="profile">Xem</a> | <a href="edit">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -41,7 +41,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="profile">Xem</a> | <a href="edit">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="profile">Xem</a> | <a href="edit">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -59,10 +59,12 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="profile">Xem</a> | <a href="edit">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   </tbody>
 </table>
+<a href="add">ADD NEW CUSTOMER</a>
+
 </body>
 </html>

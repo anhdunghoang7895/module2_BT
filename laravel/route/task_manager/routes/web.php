@@ -21,28 +21,27 @@ Route::prefix('customer')->group(function () {
 		// Hiển thị danh sách khách hàng
 		return view('index');
 	});
-
-	Route::get('create', function () {
+	Route::get('add', function () {
 		// Hiển thị Form tạo khách hàng
+		return view('add');
+	});
+	Route::get('profile', function () {
+		return view('profile');
+	});
+	Route::get('edit', function () {
+		return view('edit');
 	});
 
-	Route::post('store', function () {
-		// Xử lý lưu dữ liệu tạo khách hàng thong qua phương thức POST từ form
-	});
+	// Route::post('store', function () {
+	// 	// Xử lý lưu dữ liệu tạo khách hàng thong qua phương thức POST từ form
+	// });
 
-	Route::get('{id}/show', function () {
-		// Hiển thị thông tin chi tiết khách hàng có mã định danh id
-	});
+	// Route::patch('{id}/update', function () {
+	// 	// xử lý lưu dữ liệu thông tin khách hàng được chỉnh sửa thông qua PATCH từ form
+	// });
 
-	Route::get('{id}/edit', function () {
-		// Hiển thị Form chỉnh sửa thông tin khách hàng
-	});
+	// Route::delete('{id}', function () {
+	// 	// Xóa thông tin dữ liệu khách hàng
+	// });
 
-	Route::patch('{id}/update', function () {
-		// xử lý lưu dữ liệu thông tin khách hàng được chỉnh sửa thông qua PATCH từ form
-	});
-
-	Route::delete('{id}', function () {
-		// Xóa thông tin dữ liệu khách hàng
-	});
 });
