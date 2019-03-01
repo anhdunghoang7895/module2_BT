@@ -14,21 +14,6 @@
 Route::get('/', function () {
 	return view('welcome');
 });
+Route::get('calculator', 'calculation@getIndex');
 
-Route::prefix('customer')->group(function () {
-
-	Route::get('index', 'CustomerController@index');
-
-	Route::get('add', 'CustomerController@add');
-
-	Route::post('store', 'CustomerController@store');
-
-	Route::get('{id}/show', 'CustomerController@show');
-
-	Route::get('{id}/edit', 'CustomerController@edit');
-
-	Route::patch('{id}/update', 'CustomerController@update');
-
-	Route::delete('{id}', 'CustomerController@destroy');
-
-});
+Route::post('add', 'calculation@getAdd');
