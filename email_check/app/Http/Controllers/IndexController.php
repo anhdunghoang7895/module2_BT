@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class IndexController extends Controller {
-	function Index(Request $request) {
-		// Lấy dữ liệu Email từ URL
-		$email = $request->email;
-
-		$check = true;
-
-		// Kiểm tra validate email theo hàm mặc định thư viện PHP
-		if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$check = false;
-		}
-
-		return view('index', compact('check'));
-	}
+class IndexController extends Controller
+{
+    function index(Request $request){
+        $num1 = $request->num1;
+        $num2 = $request->num2;
+        $value = $request->value;
+        $giatri =0;
+        if ($value == "cong"){
+            $giatri = $num1 + $num2;
+        } else if ($value == "tru"){
+            $giatri = $num1 - $num2;
+        } else if ($value == "nhan"){
+            $giatri = $num1 * $num2;
+        } else if ($value == "chia"){
+            $giatri = $num1 / $num2;
+        }
+       
+        return view('index', compact('giatri'));
+    }
+    
 }
