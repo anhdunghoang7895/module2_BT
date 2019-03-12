@@ -28,4 +28,20 @@ Route::get('/', 'blogsController@index')->name('blogs.index');
 Route::group(['prefix' => 'blogs'], function () {
 	Route::get('/create', 'blogsController@create')->name('blogs.create');
 	Route::post('/create', 'blogsController@store');
+
+	Route::get('/about', 'blogsController@about')->name('blogs.about');
+
+	Route::get('{id}/edit', 'blogsController@edit')->name('blogs.edit');
+	Route::post('{id}/edit', 'blogsController@update');
+
+	Route::get('{id}/show', 'blogsController@show')->name('blogs.show');
+
+	Route::get('{id}/destroy', 'blogsController@destroy')->name('blogs.destroy');
 });
+Auth::routes();
+
+Route::get('home', 'HomeController@index')->name('home');
+
+Route::get('/page-guest', 'HomeController@showPageGuest');
+
+Route::get('/page-admin', 'HomeController@showPageAdmin');

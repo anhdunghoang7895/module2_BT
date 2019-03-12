@@ -24,6 +24,9 @@ class categoryController extends Controller {
 	 */
 	public function store(Request $request) {
 		$category = new categories;
+		$this->validate($request, [
+			'type' => 'required|unique:categories|max:225',
+		]);
 		$category->type = $request->type;
 		$category->save();
 

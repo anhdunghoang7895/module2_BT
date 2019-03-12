@@ -6,7 +6,4 @@ use Illuminate\Database\Eloquent\Model;
 
 class blogs extends Model {
 	protected $table = 'blogs';
-	public function blogs() {
-		return $this->belongsTo('App\categories');
-	}
 }

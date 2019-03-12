@@ -12,6 +12,7 @@
 		<tr>
 			<th>ID</th>
 			<th>Type</th>
+			<th colspan="2" class='text-center'>Action</th>
 		</tr>
 		@foreach($category as $key => $category)
 		<tr>
