@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration {
 
 			$table->string('password');
 
-			$table->string('admin');
+			$table->string('admin')->default(0);
 
 			$table->rememberToken();
 
