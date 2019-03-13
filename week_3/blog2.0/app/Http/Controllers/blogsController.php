@@ -18,12 +18,12 @@ class blogsController extends Controller {
 		return view('blogs.about');
 	}
 
-	public function create() {
+	public function createNewBlog() {
 		$categories = categories::all();
 		return view('blogs.create', compact('categories'));
 	}
 
-	public function store(Request $request) {
+	public function storeNewBlog(Request $request) {
 		$blog = new blogs;
 		$this->validate($request, [
 			'title' => 'required|unique:blogs|max:225',
@@ -45,7 +45,7 @@ class blogsController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id) {
+	public function showBlogDetail($id) {
 		$blog = blogs::find($id);
 		$type = categories::find($blog->category_id)->type;
 		return view('blogs.show', compact('blog', 'type'));
@@ -57,7 +57,7 @@ class blogsController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id) {
+	public function editBlog($id) {
 		$blog = blogs::find($id);
 		$categories = categories::all();
 		return view('blogs.edit', compact('categories', 'blog'));
@@ -70,7 +70,7 @@ class blogsController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id) {
+	public function updateBlog(Request $request, $id) {
 		$blog = blogs::find($id);
 		$blog->title = $request->title;
 		$blog->content = $request->content;
@@ -86,7 +86,7 @@ class blogsController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id) {
+	public function deleteBlog($id) {
 		$blog = blogs::find($id);
 		$blog->delete();
 

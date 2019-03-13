@@ -12,11 +12,11 @@ class categoryController extends Controller {
 		return view('categories.index', compact('category'));
 	}
 
-	public function create() {
+	public function createNewCategory() {
 		return view('categories.create');
 	}
 
-	public function store(Request $request) {
+	public function storeNewCategory(Request $request) {
 		$category = new categories;
 		$this->validate($request, [
 			'type' => 'required|unique:categories|max:225',
@@ -37,8 +37,9 @@ class categoryController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id) {
-		return view('categories.edit');
+	public function editCategory($id) {
+		$category = categories::find($id)->type;
+		return view('categories.edit', compact('category'));
 	}
 
 	/**
@@ -48,7 +49,7 @@ class categoryController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id) {
+	public function updateCtegory(Request $request, $id) {
 		$category = categories::find($id);
 		$category->type = $request->type;
 		$category->save();
@@ -62,7 +63,7 @@ class categoryController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id) {
+	public function deleteCategory($id) {
 		$category = categories::find($id);
 		$category->delete();
 
