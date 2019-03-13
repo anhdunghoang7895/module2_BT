@@ -14,6 +14,7 @@
 	<li><a href="{{route('blogs.index')}}">Home</a></li>
 	<li><a href="{{route('blogs.create')}}">Create Blog</a></li>
 	<li><a href="{{route('blogs.about')}}">About</a></li>
+
 	<div class="dropdown">
 		<span>Admin</span>
 		<div class="dropdown-content">
@@ -21,6 +22,12 @@
 			<li><a href="{{route('categories.create')}}">Create</a></li>
 		</div>
 	</div>
+	<div class="home">
+		<li><a href="{{route('home')}}">Login</a></li>
+		<li><a href="{{route('register')}}">Register</a></li>
+	</div>
+
 </ul>
+
 @yield('content')
 

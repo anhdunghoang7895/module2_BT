@@ -16,12 +16,6 @@ class categoryController extends Controller {
 		return view('categories.create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return \Illuminate\Http\Response
-	 */
 	public function store(Request $request) {
 		$category = new categories;
 		$this->validate($request, [
@@ -33,12 +27,6 @@ class categoryController extends Controller {
 		return view('categories.create');
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
 	public function show($id) {
 		//
 	}
